@@ -27,17 +27,31 @@ function addToCart(item) {
 }
 
 function viewCart() {
+  var sentence = "In your cart, you have"
+  var big_array = []
   var pairs = []
   if (cart.length === 0) {
     console.log("Your shopping cart is empty.")
   } else {
     for (var i = 0; i < cart.length; i++) {
-      for (var key in cart[i]) {
-        pairs.push(`${key} at $${cart[i][key]}`)
+      for (var key1 in cart[i]) {
+          pairs.push(cart[i][key1])
+      }
+      big_array.push(`${pairs[0]} at $${pairs[1]}`)
+      pairs = []
+    }   
+  }
+    
+  for (var i2 = 0; i2 < big_array.length; i2++) {
+      if (big_array.length == 1) {
+        sentence += ` ${big_array[i2]}.`
+      } else if (i2 == cart.length - 1) {
+        sentence += ` and ${big_array[i2]}.`
+      } else {
+        sentence += ` ${big_array[i2]},`
       }
   }
-    console.log(`In your cart, you have ${pairs.join(', ')}.`)
-  }
+    console.log(sentence)
 }
 
 function removeFromCart(item) {
