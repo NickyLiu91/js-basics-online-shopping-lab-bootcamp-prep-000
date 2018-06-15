@@ -39,9 +39,9 @@ function viewCart() {
       }
       big_array.push(`${pairs[0]} at $${pairs[1]}`)
       pairs = []
-    }   
+    }
   }
-    
+
   for (var i2 = 0; i2 < big_array.length; i2++) {
       if (big_array.length == 1) {
         sentence += ` ${big_array[i2]}.`
