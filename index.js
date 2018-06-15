@@ -51,7 +51,7 @@ function viewCart() {
         sentence += ` ${big_array[i2]},`
       }
   }
-    console.log(sentence)
+    return sentence
 }
 
 function removeFromCart(item) {
