@@ -31,7 +31,7 @@ function viewCart() {
   var big_array = []
   var pairs = []
   if (cart.length === 0) {
-    console.log("Your shopping cart is empty.")
+    return "Your shopping cart is empty."
   } else {
     for (var i = 0; i < cart.length; i++) {
       for (var key1 in cart[i]) {
